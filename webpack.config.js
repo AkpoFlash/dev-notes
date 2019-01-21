@@ -13,7 +13,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx']
+        extensions: ['.js', '.jsx']
     },
     module: {
         rules: [
@@ -22,11 +22,9 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
-                test: /\.(t|j)sx?$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'awesome-typescript-loader'
-                },
+                loader: 'babel-loader'
             }
         ]
     },
